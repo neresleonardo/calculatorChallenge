@@ -4,13 +4,15 @@ export const Container = styled.div`
 
     button {
         width: 50px;
-        height: 40px;
-        background: red;
+        padding:0.3rem;
+        background: #394854;
         margin: 0.3rem 0.6rem;
         border-radius: 0.25rem;
         font-size:1.5rem;
         overflow: hidden;
         border:none;
+        font-family: 'Open Sans', sans-serif;
+        color: #ccc;
 
 
         transition: filter 0.2s ease;

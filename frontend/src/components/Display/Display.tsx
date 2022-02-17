@@ -1,4 +1,4 @@
-import { ComponentDisplay } from './styles'
+import { DisplayComponent } from './styles'
  
 interface  DisplayProps  {
     value: string;
@@ -8,6 +8,9 @@ interface  DisplayProps  {
 export function Display({value}: DisplayProps){
     return(
 
-        <ComponentDisplay>{value}</ComponentDisplay>
+        <DisplayComponent>
+            <main>{value} </main><br/>
+        </DisplayComponent>
+
     )
 }

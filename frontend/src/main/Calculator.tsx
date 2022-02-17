@@ -1,13 +1,14 @@
 import { Button } from '../components/Button/button';
 import { Display } from '../components/Display/Display';
 
-import { Container } from "./styles";
+import { Container, Teclado } from "./styles";
 
 export function Calculator() {
     return(
         <Container>
             <Display value="123" />
-            
+            <Teclado>
+
             <Button label="AC" operation  />
             <Button label="clear" operation />
             <Button label="%" operation />
@@ -27,6 +28,7 @@ export function Calculator() {
             <Button label="0" />
             <Button label="." />
             <Button label="=" double />
+            </Teclado>
         </Container>
     )
 }

@@ -6,7 +6,10 @@ export const Container = styled.div`
     border-radius: 1rem;
     overflow: hidden;
     background-color:#243441;
+    
+`
+
+export const Teclado = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows:  1fr 48px 48px 48px 48px 48px;
-`
+    grid-template-rows: 59px 59px 59px 59px 59px;`

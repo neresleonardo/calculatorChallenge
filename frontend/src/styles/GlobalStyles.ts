@@ -23,7 +23,7 @@ export default createGlobalStyle`
     button {
         border: 0;
         outline: 0;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
     button {
         cursor: pointer;
