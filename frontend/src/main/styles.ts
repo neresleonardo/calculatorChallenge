@@ -1,1 +1,12 @@
 import styled from 'styled-components';
+
+export const Container = styled.div`
+    height: 570px;
+    width:280px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color:#243441;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows:  1fr 48px 48px 48px 48px 48px;
+`
