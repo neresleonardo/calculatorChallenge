@@ -1,8 +1,7 @@
-import React from 'react';
 import {Container} from './styles'
 
 interface buttonProps {
-    label: string,
+    label?: string,
     operation?: boolean,
     double?: boolean,
            
@@ -17,7 +16,11 @@ export function Button({label , double, operation}:buttonProps) {
                 ${operation ? 'operation' : ''}
                 ${double ? 'double' : ''}
                 `
-            } >{label}</button>
+            } >
+            
+            {label}
+            
+            </button>
         </Container>
     )
 }

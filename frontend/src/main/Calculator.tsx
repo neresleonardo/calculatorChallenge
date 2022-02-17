@@ -1,5 +1,6 @@
 import { Button } from '../components/Button/button';
 import { Display } from '../components/Display/Display';
+import { FiDelete } from 'react-icons/fi';
 
 import { Container, Teclado } from "./styles";
 
@@ -10,7 +11,7 @@ export function Calculator() {
             <Teclado>
 
             <Button label="AC" operation  />
-            <Button label="clear" operation />
+            <Button label="º" operation/>
             <Button label="%" operation />
             <Button label="/" operation />
             <Button label="7" />
