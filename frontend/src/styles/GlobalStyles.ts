@@ -3,10 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 // Estilo Global
 export default createGlobalStyle`
 
-    :root {
-
-    }
-
     * {
         margin: 0;
         padding: 0;
@@ -17,6 +13,7 @@ export default createGlobalStyle`
         height: 100vh;
         justify-content: center;
         align-items: center;
+        background: #f5a66b;
 
     }
 

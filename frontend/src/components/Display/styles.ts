@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const DisplayComponent = styled.div`
         height: 220px;
         grid-column: span 4;
-        background-color: #243441;
+        background-color:  ${props => props.theme.colors.primary};
 
         justify-content: flex-end;
         align-items: center;
@@ -15,7 +15,7 @@ export const DisplayComponent = styled.div`
 
         main {
         font-size: 4.2em;
-        color: #fff;
+        color: ${props => props.theme.colors.white};
 
         }
         `;

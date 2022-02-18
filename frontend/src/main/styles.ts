@@ -5,7 +5,7 @@ export const Container = styled.div`
     width:280px;
     border-radius: 1rem;
     overflow: hidden;
-    background-color:#243441;
+    background-color: ${props => props.theme.colors.primary};
     
 `
 
