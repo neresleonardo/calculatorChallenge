@@ -1,5 +1,3 @@
-
-import Toggle from '../Toogle';
 import { DisplayComponent } from './styles'
  
 interface  DisplayValue  {
@@ -24,7 +22,7 @@ export function Display({ data }: DisplayProps){
         
         <DisplayComponent>
             <main>
-                {viewExpression()}     
+               <div> {viewExpression()} </div>    
             </main>
         </DisplayComponent>
 
