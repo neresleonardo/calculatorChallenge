@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import api from "../server/api"
 import { Button } from '../components/Button/button';
 import { Display } from '../components/Display/Display';
 import { Container, Teclado } from "./styles";
@@ -29,6 +29,12 @@ export function Calculator() {
        
    }
 
+   const handleRemoveN = () =>{
+        valuesArray.pop()
+
+        setValuesArray([...valuesArray])
+   }
+
     const handleClearMemory = () => {
         valuesArray.splice(0)
 
@@ -52,7 +58,7 @@ export function Calculator() {
             <Teclado>
 
             <Button onClick={() => handleClearMemory()} id="AC" operation  />
-            <Button onClick={() => handleOperator("º")} id="°" operation/>
+            <Button onClick={() => handleRemoveN()} id="°" operation/>
             <Button onClick={() => handleOperator('%')} id="%" operation />
             <Button onClick={() => handleOperator('/')} id="/" operation />
             <Button onClick={() => handleAddDigit('7')} id="7" />
