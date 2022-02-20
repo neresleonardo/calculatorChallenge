@@ -18,6 +18,7 @@ interface ITheme {
 
         black: string,
         white: string,
+        whiteGlobal: string,
         orange: string,
     }
 }

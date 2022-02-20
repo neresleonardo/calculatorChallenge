@@ -27,7 +27,8 @@ export const Container = styled.div`
 
         .button.double {
             width: 120px;
-            background: #ed802e;
+            background: ${props => props.theme.colors.orange};
+            color: ${props => props.theme.colors.whiteGlobal}
             }
 
         .button.operation {
