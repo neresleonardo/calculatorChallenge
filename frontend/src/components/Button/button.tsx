@@ -1,15 +1,16 @@
+import { ReactNode } from 'react'
 import {Container} from './styles'
 
 interface buttonProps {
     id: string,
-    label?: string,
     operation?: boolean,
     double?: boolean,
     onClick: () => void;
+    children?: ReactNode;
            
 }
 
-export function Button({id, label , double, operation, onClick}:buttonProps) {
+export function Button({double, operation, onClick, children}:buttonProps) {
     return (
         <Container>
             <button 
@@ -20,8 +21,7 @@ export function Button({id, label , double, operation, onClick}:buttonProps) {
                 ${double ? 'double' : ''}
                 `
             } >
-            {id}
-            {label}
+            {children}
             
             </button>
         </Container>

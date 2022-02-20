@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { useTheme } from '../../hooks/theme';
+import Toggle from '../Toogle';
 import { DisplayComponent } from './styles'
  
 interface  DisplayValue  {
@@ -10,6 +13,17 @@ interface DisplayProps {
 
 
 export function Display({ data }: DisplayProps){
+
+    const { toggleTheme, theme } = useTheme();
+
+    const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
+
+    const handleChangeTheme = () => {
+        setDarkTheme(!darkTheme);
+        toggleTheme();
+    }
+
+
     const viewExpression = () => {
         let expression = '';
 
@@ -20,10 +34,27 @@ export function Display({ data }: DisplayProps){
 
     return(
         
+        
         <DisplayComponent>
-            <main>
-               <div> {viewExpression()} </div>    
-            </main>
+            <div className="toggle">
+
+                <Toggle 
+                checked={darkTheme}
+                onChange={handleChangeTheme}
+                />   
+
+            </div>
+            <div className="total">
+                
+            {/* total */}
+             
+            </div>
+
+            <div className="display-component">
+                
+               {viewExpression()} 
+             
+            </div>
         </DisplayComponent>
 
     )
