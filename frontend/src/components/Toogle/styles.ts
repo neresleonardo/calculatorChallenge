@@ -8,8 +8,8 @@ export const Container = styled.div`
 
 export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
     ({ theme }) => ({
-        onColor: theme.colors.primary,
-        offColor: theme.colors.secondary
+        onColor: theme.colors.orange,
+        offColor: theme.colors.orange,
     }))<ReactSwitchProps>`
     margin: 0 7px;
 `;
