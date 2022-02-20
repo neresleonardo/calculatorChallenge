@@ -15,6 +15,7 @@ export const DisplayComponent = styled.div`
         }
         .total{
         width:100%;
+        height:50px;
         display:flex;
         justify-content: flex-end;
         margin-top: 50px;
@@ -30,7 +31,7 @@ export const DisplayComponent = styled.div`
         justify-content: flex-end;
         align-items: center;
         font-size: 1.6em;
-        color: ${props => props.theme.colors.white};
+        color: ${props => props.theme.colors.gray};
 
         }
 

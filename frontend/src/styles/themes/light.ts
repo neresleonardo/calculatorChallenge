@@ -9,6 +9,7 @@ export default {
         black: '#ffffff',
         white: '#000000',
         whiteGlobal: '#ffffff',
-        orange: '#ed802e'
+        orange: '#ed802e',
+        gray:'#43464b',
     }
 };

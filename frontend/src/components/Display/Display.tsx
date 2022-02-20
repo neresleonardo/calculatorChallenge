@@ -46,7 +46,7 @@ export function Display({ data }: DisplayProps){
             </div>
             <div className="total">
                 
-            {/* total */}
+           3333
              
             </div>
 
