@@ -46,13 +46,12 @@ app.post("/mul", (req: Request, res: Response) => {
 app.post("/div", (req: Request, res: Response) => {
     const { n1, n2 } = req.body;
 
-    const response = n1 / n2;
+    let response = n1 / n2;
 
         return res.status(200).json({
             response,
         });
-    
-
+   
 });
 
 //rota para pos
