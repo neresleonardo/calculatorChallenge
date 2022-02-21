@@ -158,20 +158,20 @@ export function Calculator() {
                 <Button onClick={() => handleRemoveN()}  operation> <FiDelete /></Button>
                 <Button onClick={() => handleOperator('%')}  operation >%</Button>
                 <Button onClick={() => handleOperator('/')}  operation >/</Button>
-                <Button onClick={() => handleAddDigit('7')}  >7</Button>
-                <Button onClick={() => handleAddDigit('8')}  >8</Button>
-                <Button onClick={() => handleAddDigit('9')}  >9</Button>
+                <Button onClick={() => handleAddDigit('7')}>7</Button>
+                <Button onClick={() => handleAddDigit('8')}>8</Button>
+                <Button onClick={() => handleAddDigit('9')}>9</Button>
                 <Button onClick={() => handleOperator('*')}  operation>*</Button>
-                <Button onClick={() => handleAddDigit('4')} >4</Button>
-                <Button onClick={() => handleAddDigit('5')}  >5</Button>
-                <Button onClick={() => handleAddDigit('6')}  >6</Button>
+                <Button onClick={() => handleAddDigit('4')}>4</Button>
+                <Button onClick={() => handleAddDigit('5')}>5</Button>
+                <Button onClick={() => handleAddDigit('6')}>6</Button>
                 <Button onClick={() => handleOperator('-')}  operation>-</Button>
                 <Button onClick={() => handleAddDigit('1')}>1</Button>
-                <Button onClick={() => handleAddDigit('2')}  >2</Button>
-                <Button onClick={() => handleAddDigit('3')}  >3</Button>
+                <Button onClick={() => handleAddDigit('2')}>2</Button>
+                <Button onClick={() => handleAddDigit('3')}>3</Button>
                 <Button onClick={() => handleOperator('+')} operation >+</Button>
-                <Button onClick={() => handleAddDigit('0')} >0</Button>
-                <Button onClick={() => handleOperator('.')} >.</Button>
+                <Button onClick={() => handleAddDigit('0')}>0</Button>
+                <Button onClick={() => handleOperator('.')}>.</Button>
                 <Button onClick={() => handleSetResult()} double >=</Button>
 
             </Teclado>
