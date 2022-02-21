@@ -2,7 +2,6 @@ import { ReactNode } from 'react'
 import {Container} from './styles'
 
 interface buttonProps {
-    id: string,
     operation?: boolean,
     double?: boolean,
     onClick: () => void;
