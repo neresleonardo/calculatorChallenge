@@ -7,12 +7,14 @@ interface  DisplayValue  {
     value: string;
 }
 
+
 interface DisplayProps {
     data: Array<DisplayValue>;
+    total: Array<DisplayValue>;
 }
 
 
-export function Display({ data }: DisplayProps){
+export function Display({ data, total }: DisplayProps){
 
     const { toggleTheme, theme } = useTheme();
 
@@ -32,6 +34,14 @@ export function Display({ data }: DisplayProps){
         return expression;
     }
 
+    const viewTotal = () => {
+        let totalResult = '';
+
+        total.forEach((item) => totalResult += item);
+
+        return totalResult;
+    }
+
     return(
         
         
@@ -46,7 +56,7 @@ export function Display({ data }: DisplayProps){
             </div>
             <div className="total">
                 
-           3333
+           {viewTotal()}
              
             </div>
 
