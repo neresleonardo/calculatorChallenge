@@ -72,7 +72,7 @@ export function Calculator() {
         let expressionRight = [];
 
         valuesArray.forEach((item) => {
-            if (item === '+' || item === '-' || item == '*' || item === '/') {
+            if (item === '+' || item === '-' || item == '*' || item === '/'|| item === '%') {
                 if (operator) {
                     if (item == '*' || item === '/') {
                         operator = item;
@@ -136,12 +136,14 @@ export function Calculator() {
                 return getResultApi('/mul', expressionLeft, expressionRight);
             case '/':
                 return getResultApi('/div', expressionLeft, expressionRight);
+            case '%':
+                return getResultApi('/pos', expressionLeft, expressionRight);
             default:
                 alert('Sua operação não é valida');
 
         }
     }
-/// reference
+/// 
 
 
 
