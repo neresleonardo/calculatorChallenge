@@ -1,3 +1,6 @@
+![Onde investir em 2022 (YouTube Thumbnail)](https://user-images.githubusercontent.com/14266075/155025645-3682553a-aaa3-4856-82ba-e454212d452f.jpg)
+
+
 
 <h1 align="center"> Desafio da calculadora ( Quarta Casa ) </h1>
 
