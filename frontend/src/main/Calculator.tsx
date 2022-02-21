@@ -9,6 +9,17 @@ export function Calculator() {
     const [valuesArray, setValuesArray] = useState([]);
     const [valuesResult, setValuesResult] = useState([]);
 
+    useEffect(() => {
+        if(valuesArray.length <= 0) return;
+        
+        const newArray = valuesArray;
+
+        newArray.push(String(valuesResult[0]));
+
+        setValuesArray(newArray);
+        handleSetResult();
+    }, [valuesResult]);
+
     const handleAddDigit = (n: string) => {
         setValuesArray([...valuesArray, n]);
     }
@@ -25,44 +36,38 @@ export function Calculator() {
    }
 
     const handleClearMemory = () => {
-        setValuesArray([])
-        setValuesResult([])
+        setValuesArray([]);
+        setValuesResult([]);
     }
 
     const getResultApi = async(route, expressionLeft, expressionRight) => {
-        let n1 = expressionLeft.forEach((item) => {
+        let n1 = '';
+        let n2 = '';
+        
+        expressionLeft.forEach((item) => {
             n1 += item;
         }); 
-
-        let n2 = expressionRight.forEach((item) => {
+        
+        expressionRight.forEach((item) => {
             n2 += item;
         }); 
 
         try {
             const { data } = await api.post(route, {
-                n1: Number(expressionLeft), 
-                n2: Number(expressionRight),
+                n1: Number(n1),
+                n2: Number(n2),
             });
     
             setValuesResult([data.response]);
         } catch(error) {
             console.log('>>>', error);
         };
-        
     }
 
-    const handleSetResult = () => {
+    const getResultExpression = () => {
         let expressionLeft = [];
         let operator = '';
         let expressionRight = [];
-
-        // 1 * 0 = 0
-        // 0 * 0 = 0
-        // 1 + 20 * 3 = 61
-        // (1 + 20) * 3 = 63
-        // 1 - 20 * 3 = -59
-        // 1 - 20 / 2 = -9
-        // 0 / 0 = Não existe resultado (Neste caso você deverá escrever na tela da calculadora a frase "Não existe resultado")
 
         valuesArray.forEach((item) => {
             if(item === '+' || item === '-' || item == '*' || item === '/') {
@@ -86,22 +91,39 @@ export function Calculator() {
             }
         });
 
+        const newArray = valuesArray;
 
-        //[1,+,2,0,*,3]
-        //[2,0]
-        //* 
-        //[3]
-        valuesArray.filter((item) => {
-            const resultLeft = expressionLeft.forEach((left) => {
-                return item !== left;
-            });
+        const indexOperator = newArray.indexOf(operator);
 
-            const resultRight = expressionRight.forEach((right) => {
-                return item !== right;
-            });
+        newArray.splice(indexOperator, 1);
 
-            console.log(resultLeft, resultRight);
-        })
+        expressionLeft.forEach((left) => {
+            const indexLeft = newArray.indexOf(left);
+
+            newArray.splice(indexLeft, 1);
+        });
+
+        expressionRight.forEach((right) => {
+            const indexRight = newArray.indexOf(right);
+
+            newArray.splice(indexRight, 1);
+        });
+
+        setValuesArray(newArray);
+
+        return {
+            expressionLeft,
+            operator,
+            expressionRight,
+        }
+    }
+
+    const handleSetResult = () => {
+        const { 
+            expressionLeft,
+            operator,
+            expressionRight
+        } = getResultExpression();
 
         switch(operator) {
             case '+':
