@@ -45,12 +45,22 @@ app.post("/mul", (req: Request, res: Response) => {
 //rota para div
 app.post("/div", (req: Request, res: Response) => {
     const { n1, n2 } = req.body;
-
-    let response = n1 / n2;
-
+    
+    if( n1 != 0 && n2 != 0 ) {
+        
+        let response = n1 / n2;
         return res.status(200).json({
             response,
         });
+    }else{
+        return res.status(200).json({
+            error: false
+        });
+    }
+
+    
+    
+
    
 });
 

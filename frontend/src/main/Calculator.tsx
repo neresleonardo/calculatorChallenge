@@ -59,7 +59,12 @@ export function Calculator() {
                 n1: Number(n1),
                 n2: Number(n2),
             });
-
+            
+            if(!data.response){
+                alert('Não existe resultado')
+                handleClearMemory()
+                return;
+            }
             setValuesResult([data.response]);
         } catch (error) {
             console.log('>>>', error);
@@ -127,6 +132,7 @@ export function Calculator() {
             expressionRight
         } = getResultExpression();
 
+    
         switch (operator) {
             case '+':
                 return getResultApi('/add', expressionLeft, expressionRight);
