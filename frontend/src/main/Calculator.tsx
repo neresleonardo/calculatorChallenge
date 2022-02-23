@@ -61,8 +61,7 @@ export function Calculator() {
             });
             
             if(!data.response){
-                alert('Não existe resultado')
-                handleClearMemory()
+                setValuesResult(["Não existe resultado"])
                 return;
             }
             setValuesResult([data.response]);
@@ -72,6 +71,7 @@ export function Calculator() {
     }
 
     const getResultExpression = () => {
+
         let expressionLeft = [];
         let operator = '';
         let expressionRight = [];
@@ -79,7 +79,7 @@ export function Calculator() {
         valuesArray.forEach((item) => {
             if (item === '+' || item === '-' || item == '*' || item === '/'|| item === '%') {
                 if (operator) {
-                    if (item == '*' || item === '/') {
+                    if (item === '*' || item === '/') {
                         operator = item;
                         expressionLeft = expressionRight;
                         expressionRight = [];
