@@ -77,9 +77,9 @@ export function Calculator() {
         let expressionRight = [];
 
         valuesArray.forEach((item) => {
-            if (item === '+' || item === '-' || item == '*' || item === '/'|| item === '%') {
+            if (item === '+' || item === '-' || item === '*' || item === '/'|| item === '%') {
                 if (operator) {
-                    if (item === '*' || item === '/') {
+                    if (item === '+' || item === '-' || item === '*' || item === '/'|| item === '%') {
                         operator = item;
                         expressionLeft = expressionRight;
                         expressionRight = [];
