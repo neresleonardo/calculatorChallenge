@@ -2,7 +2,7 @@
 
 
 
-<h1 align="center"> Desafio da calculadora ( Quarta Casa ) </h1>
+<h1 align="center"> Desafio da calculadora </h1>
 
 </h1>
 <p align="center">🚀 Calculadora feita com TS</p>
